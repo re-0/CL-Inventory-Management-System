@@ -1,0 +1,11 @@
+C:\Users\Regi\Desktop\InventoryMgt\bin\Debug\netcoreapp2.1\InventoryMgt.deps.json
+C:\Users\Regi\Desktop\InventoryMgt\bin\Debug\netcoreapp2.1\InventoryMgt.runtimeconfig.json
+C:\Users\Regi\Desktop\InventoryMgt\bin\Debug\netcoreapp2.1\InventoryMgt.runtimeconfig.dev.json
+C:\Users\Regi\Desktop\InventoryMgt\bin\Debug\netcoreapp2.1\InventoryMgt.dll
+C:\Users\Regi\Desktop\InventoryMgt\bin\Debug\netcoreapp2.1\InventoryMgt.pdb
+C:\Users\Regi\Desktop\InventoryMgt\obj\Debug\netcoreapp2.1\InventoryMgt.csprojAssemblyReference.cache
+C:\Users\Regi\Desktop\InventoryMgt\obj\Debug\netcoreapp2.1\InventoryMgt.csproj.CoreCompileInputs.cache
+C:\Users\Regi\Desktop\InventoryMgt\obj\Debug\netcoreapp2.1\InventoryMgt.AssemblyInfoInputs.cache
+C:\Users\Regi\Desktop\InventoryMgt\obj\Debug\netcoreapp2.1\InventoryMgt.AssemblyInfo.cs
+C:\Users\Regi\Desktop\InventoryMgt\obj\Debug\netcoreapp2.1\InventoryMgt.dll
+C:\Users\Regi\Desktop\InventoryMgt\obj\Debug\netcoreapp2.1\InventoryMgt.pdb

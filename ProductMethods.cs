@@ -40,7 +40,7 @@ namespace NewIn
                 }    
         }
 
-        public static void editBrand(List<Product> someList, int theIndex, string newVal = "")
+        public static void editBrand(List<Product> someList, int theIndex)
         {
                 Console.Write("Enter new brand: ");
                 var newVal_Brand = Convert.ToString(Console.ReadLine());
@@ -53,7 +53,7 @@ namespace NewIn
                 }
         }
 
-        public static void editPrice(List<Product> someList, int theIndex, int newVal = 0)
+        public static void editPrice(List<Product> someList, int theIndex)
         {
                 Console.Write("Enter new price: ");
                 var newVal_Price = Convert.ToDecimal(Console.ReadLine());

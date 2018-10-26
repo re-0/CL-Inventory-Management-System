@@ -29,4 +29,4 @@ While this would not throw any errors and the product would still be added to th
 ### What happens next?
 Next up, I'll make sure to check whether the most recently added method, `ShowProducts()`, does actually work (coded it real quick before getting some food * *hehe* *), then finish writing methods for updating and deleting records.
 
-I will also look at rewriting some existing methods to allow smoother usage, but also
+I will also start learning GUI development, which means that sooner or later this project will be ported to the .NET Framework.

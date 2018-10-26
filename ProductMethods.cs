@@ -66,7 +66,7 @@ namespace NewIn
                 }
         }
 
-        public static void editQuantity(List<Product> someList, int theIndex, int newVal = 0)
+        public static void editQuantity(List<Product> someList, int theIndex)
         {
                 Console.Write("Enter new quantity: ");
                 var newVal_Quantity = Convert.ToInt32(Console.ReadLine());

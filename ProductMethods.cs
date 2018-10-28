@@ -15,7 +15,6 @@ namespace NewIn
         }
 
         public static List<Product> editName(List<Product> someList, int theIndex, string new_name){
-            //someList.GetRange(theIndex, 1).Where( w => w.productName = );
             string tmp = string.Empty;
             foreach (Product item in someList.GetRange(theIndex, 1))
             {

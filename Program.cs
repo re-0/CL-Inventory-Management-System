@@ -51,15 +51,16 @@ namespace NewIn
                 Console.WriteLine("Your current inventory.\n");
                 ListTheProducts(prod);
 
+                // I completely forgot that I will need a do-while loop for the below code. Please ignore for now.
                 Console.WriteLine("Type remove to remove item, or edit to edit: ");
                 string act = Convert.ToString(Console.ReadLine()).ToLower();
                 
                 if(act == "remove")
                 {
-                    Console.WriteLine("Please enter the index of the item you want to remove: ");
+                    Console.WriteLine("Please enter the index of the item you want to remove (start at 1): ");
                     int rem = Convert.ToInt32(Console.ReadLine());
                     rem -= 1;
-                    removeItem(prod, rem);
+                    prod.RemoveAt(rem);
                 } // end: if-remove
                 else
                     if(act == "edit")
@@ -84,7 +85,6 @@ namespace NewIn
                             else                        Console.WriteLine("Unknown command");
                     */
                     }
-                
             } // end: if-yes
             else
                 if(answ == "n")

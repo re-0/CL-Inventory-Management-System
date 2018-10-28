@@ -43,60 +43,72 @@ namespace NewIn
         //<!-- END: ADD NEW INVENTORY -->
 
             Console.Clear();
-            Console.Write("Would you like to change anything in the inventory? [Y/n] ");
+            Console.Write("(Y will not work at the moment. Please type n!)\nWould you like to change anything in the inventory? [Y/n] ");
             string answ = Convert.ToString(Console.ReadLine()).ToLower();
 
-            if(answ == "y"){
+            if(answ == "y")
+            {
                 Console.WriteLine("Your current inventory.\n");
                 ListTheProducts(prod);
 
                 Console.WriteLine("Type remove to remove item, or edit to edit: ");
                 string act = Convert.ToString(Console.ReadLine()).ToLower();
                 
-                if(act == "remove"){
+                if(act == "remove")
+                {
                     Console.WriteLine("Please enter the index of the item you want to remove: ");
                     int rem = Convert.ToInt32(Console.ReadLine());
                     rem -= 1;
                     removeItem(prod, rem);
                 } // end: if-remove
-                else{
-                    Console.WriteLine("You chose to edit an item.");
-                    
-                    foreach(Product ob in prod)
-                        Console.WriteLine($"{ob.productName}");
-                    Console.WriteLine("Enter index of item to edit: ");
-                    int index = Convert.ToInt32(Console.ReadLine());
-                    index -= 1;
+                else
+                    if(act == "edit")
+                    {
+                        Console.WriteLine("Temporary unavailable.");
+                       // Console.WriteLine("You chose to edit an item.");
+                    /*    
+                        foreach(Product ob in prod)
+                            Console.WriteLine($"{ob.productName}");
+                        
+                        Console.WriteLine("Enter index of item to edit: ");
+                        int index = Convert.ToInt32(Console.ReadLine());
+                        index -= 1;
 
-                    Console.WriteLine("Commands (only one): name, brand, price, quantity.\n\t");
-                    string ans = Convert.ToString(Console.ReadLine()).ToLower();
+                        Console.WriteLine("Commands (only one): name, brand, price, quantity.\n\t");
+                        string ans = Convert.ToString(Console.ReadLine()).ToLower();
 
-                    if     (ans == "name")      editName(prod,      index);
-                    else if(ans == "brand")     editBrand(prod,     index);
-                    else if(ans == "price")     editPrice(prod,     index);
-                    else if(ans == "quantity")  editQuantity(prod,  index);
-                    else                        Console.WriteLine("Unknown command");
-                }
+                            if     (ans == "name")      editName(prod,      index);
+                            else if(ans == "brand")     editBrand(prod,     index);
+                            else if(ans == "price")     editPrice(prod,     index);
+                            else if(ans == "quantity")  editQuantity(prod,  index);
+                            else                        Console.WriteLine("Unknown command");
+                    */
+                    }
                 
             } // end: if-yes
             else
-                if(answ == "n"){
+                if(answ == "n")
+                {
                     if ( (prod != null) && (prod.Any()) )
                     {
                         try
                         {
-                        AddProduct(prod);
-                        Console.WriteLine("Products successfully added to database!");
-                        AddedInventoryValue(prod);
+                            AddProduct(prod);
+                            Console.WriteLine("Products successfully added to database!");
+                            AddedInventoryValue(prod);
                         }
-                        catch(Exception ex){
+                        catch(Exception ex)
+                        {
                             Console.WriteLine(ex.Message);
                             Console.WriteLine(ex.StackTrace);
                         }
-                    }else
-                        Console.WriteLine("No new inventory added");
-                }else
-                    Console.WriteLine("Unknown command");
+                    }else{
+                            Console.WriteLine("No new inventory added");
+                        }
+                }else{
+                        Console.WriteLine("Unknown command");
+                }
+    
                     
             
         // NEWLINE

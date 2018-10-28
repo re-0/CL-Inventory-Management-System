@@ -14,18 +14,24 @@ namespace NewIn
                 Console.WriteLine($"{obj.productName, -18}\t{(char)163}{obj.productPrice, -7}\t{obj.productQuantity}");
         }
 
-        public static void removeItem(List<Product> someList, int theIndex)
+        public static List<Product> removeItem(List<Product> someList, int theIndex){
+            someList.RemoveAt(theIndex);
+            return someList.ToList();
+        }
+        // edit_XXXX methods do not function correctly
+       /* public static void removeItem(List<Product> someList, int theIndex)
         {
             try
             {
                 someList.RemoveAt(theIndex);
                 Console.WriteLine("Removing of item successful!\n");
                 ListTheProducts(someList);
+
             }catch(System.Exception)
             {
                 Console.WriteLine("Something went wrong!"); //throw; // Prints error to console
             } // end: try-catch
-        }
+        }*/
 
         public static void editName(List<Product> someList, int theIndex)
         {
@@ -101,7 +107,7 @@ namespace NewIn
             }
         }
 
-        public static List<Product> ShowProducts(List<Product> someList) // Not tried, yet
+        public static List<Product> ShowProducts() // Not tried, yet
         {
             var tempList = new List<Product>();
             using( var con = new SqliteConnection("DataSource = InventoryDB.db"))

@@ -14,8 +14,16 @@ namespace NewIn
                 Console.WriteLine($"{obj.productName, -18}\t{(char)163}{obj.productPrice, -7}\t{obj.productQuantity}");
         }
 
-        public static List<Product> removeItem(List<Product> someList, int theIndex){
-            someList.RemoveAt(theIndex);
+        public static List<Product> editName(List<Product> someList, int theIndex, string new_name){
+            //someList.GetRange(theIndex, 1).Where( w => w.productName = );
+            string tmp = string.Empty;
+            foreach (Product item in someList.GetRange(theIndex, 1))
+            {
+                tmp = Convert.ToString(item.productName);
+            }
+
+            someList.FirstOrDefault(c => c.productName == tmp).productName = new_name;
+
             return someList.ToList();
         }
         // edit_XXXX methods do not function correctly
@@ -33,6 +41,7 @@ namespace NewIn
             } // end: try-catch
         }*/
 
+        /*
         public static void editName(List<Product> someList, int theIndex)
         {
                 Console.Write("Enter new name: ");
@@ -45,6 +54,7 @@ namespace NewIn
                     .ToList().ForEach(s => s.productName = newVal_Name);
                 }    
         }
+         */
 
         public static void editBrand(List<Product> someList, int theIndex)
         {

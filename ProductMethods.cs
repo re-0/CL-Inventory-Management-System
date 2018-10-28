@@ -25,6 +25,42 @@ namespace NewIn
 
             return someList.ToList();
         }
+
+        public static List<Product> editBrand(List<Product> someList, int theIndex, string new_brand){
+            string tmp = string.Empty;
+            foreach (Product item in someList.GetRange(theIndex, 1))
+            {
+                tmp = Convert.ToString(item.brand);
+            }
+
+            someList.FirstOrDefault(c => c.brand == tmp).brand = new_brand;
+
+            return someList.ToList();
+        }
+
+        public static List<Product> editPrice(List<Product> someList, int theIndex, decimal new_price){
+            decimal tmp = 0m;
+            foreach (Product item in someList.GetRange(theIndex, 1))
+            {
+                tmp = Convert.ToDecimal(item.productPrice);
+            }
+
+            someList.FirstOrDefault(c => c.productPrice == tmp).productPrice = new_price;
+
+            return someList.ToList();
+        }
+
+        public static List<Product> editQuantity(List<Product> someList, int theIndex, int new_quantity){
+            int tmp = 0;
+            foreach (Product item in someList.GetRange(theIndex, 1))
+            {
+                tmp = Convert.ToInt32(item.productQuantity);
+            }
+
+            someList.FirstOrDefault(c => c.productQuantity == tmp).productQuantity = new_quantity;
+
+            return someList.ToList();
+        }
         // edit_XXXX methods do not function correctly
        /* public static void removeItem(List<Product> someList, int theIndex)
         {
@@ -38,9 +74,7 @@ namespace NewIn
             {
                 Console.WriteLine("Something went wrong!"); //throw; // Prints error to console
             } // end: try-catch
-        }*/
-
-        /*
+  
         public static void editName(List<Product> someList, int theIndex)
         {
                 Console.Write("Enter new name: ");
@@ -53,7 +87,6 @@ namespace NewIn
                     .ToList().ForEach(s => s.productName = newVal_Name);
                 }    
         }
-         */
 
         public static void editBrand(List<Product> someList, int theIndex)
         {
@@ -93,6 +126,7 @@ namespace NewIn
                         .ToList().ForEach(s => s.productQuantity = newVal_Quantity);
                 }
         }
+*/
 
         public static void AddProduct(List<Product> someList)
         {

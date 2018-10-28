@@ -1,4 +1,8 @@
 # Inventory Management System (C#, Command-line based)
+
+# IMPORTANT
+`remove` and `edit` do not work at the moment. Neither do the methods they call. I will fix this ASAP!
+
 ### Intro
 This is a command-line based **inventory management system** that will become part of a Point of Sales (PoS) system.
 

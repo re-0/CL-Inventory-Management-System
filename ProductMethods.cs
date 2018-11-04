@@ -14,6 +14,18 @@ namespace NewIn
                 Console.WriteLine($"{obj.productName, -18}\t{(char)163}{obj.productPrice, -7}\t{obj.productQuantity}");
         }
 
+        public static void checkEditCmd(string someCommand)
+        {
+            if(someCommand.ToLower() != "name"
+             && someCommand.ToLower() != "brand" 
+             && someCommand.ToLower() != "price" 
+             && someCommand.ToLower() != "quantity")
+             {
+                            Console.Clear();
+                            Console.WriteLine($"<{someCommand}>\nUnknown command. Try again.");
+            }
+        }
+
         public static List<Product> editName(List<Product> someList, int theIndex, string new_name){
             string tmp = string.Empty;
             foreach (Product item in someList.GetRange(theIndex, 1))
@@ -61,72 +73,6 @@ namespace NewIn
 
             return someList.ToList();
         }
-        // edit_XXXX methods do not function correctly
-       /* public static void removeItem(List<Product> someList, int theIndex)
-        {
-            try
-            {
-                someList.RemoveAt(theIndex);
-                Console.WriteLine("Removing of item successful!\n");
-                ListTheProducts(someList);
-
-            }catch(System.Exception)
-            {
-                Console.WriteLine("Something went wrong!"); //throw; // Prints error to console
-            } // end: try-catch
-  
-        public static void editName(List<Product> someList, int theIndex)
-        {
-                Console.Write("Enter new name: ");
-                var newVal_Name = Convert.ToString(Console.ReadLine());
-                foreach(Product obj in someList.GetRange(theIndex, 1))
-                { // to get 1 entry only. replace 0 with index needed.
-                    Console.WriteLine($"\n{obj.productName}");
-                    var name = obj.productName;
-                    someList.Where(w => w.productName == name)
-                    .ToList().ForEach(s => s.productName = newVal_Name);
-                }    
-        }
-
-        public static void editBrand(List<Product> someList, int theIndex)
-        {
-                Console.Write("Enter new brand: ");
-                var newVal_Brand = Convert.ToString(Console.ReadLine());
-                foreach(Product obj in someList.GetRange(theIndex, 1))
-                {
-                    Console.WriteLine($"\n{obj.brand}");
-                    var brand = obj.brand;
-                    someList.Where(w => w.brand == brand)
-                    .ToList().ForEach(s => s.brand = newVal_Brand);
-                }
-        }
-
-        public static void editPrice(List<Product> someList, int theIndex)
-        {
-                Console.Write("Enter new price: ");
-                var newVal_Price = Convert.ToDecimal(Console.ReadLine());
-                foreach(Product obj in someList.GetRange(theIndex, 1))
-                {
-                    Console.WriteLine($"\n{obj.productPrice}");
-                    var price = obj.productPrice;
-                    someList.Where(w => w.productPrice == price)
-                    .ToList().ForEach(s => s.productPrice = newVal_Price);
-                }
-        }
-
-        public static void editQuantity(List<Product> someList, int theIndex)
-        {
-                Console.Write("Enter new quantity: ");
-                var newVal_Quantity = Convert.ToInt32(Console.ReadLine());
-                foreach(Product obj in someList.GetRange(theIndex, 1))
-                {
-                        Console.WriteLine($"\n{obj.productQuantity}");
-                        var quantity = obj.productQuantity;
-                        someList.Where(w => w.productQuantity == quantity)
-                        .ToList().ForEach(s => s.productQuantity = newVal_Quantity);
-                }
-        }
-*/
 
         public static void AddProduct(List<Product> someList)
         {

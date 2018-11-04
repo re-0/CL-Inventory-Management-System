@@ -7,6 +7,32 @@ using Microsoft.Data.Sqlite;
 namespace NewIn
 {
     public static class Methods{
+
+        public static void AddNew(List<Product> someList, string input_1) // this methods handles adding new items to inventory in-memory
+        {
+            Product pr = new Product();
+            List<Product> tempList = new List<Product>();
+            try
+            {
+                string[] temp = input_1.Split(",");
+                pr.productName = temp[0];
+                pr.brand = temp[1];
+                pr.productPrice = Decimal.Parse(temp[2],
+                                          NumberStyles.Float, 
+                                          CultureInfo.InvariantCulture);
+                pr.productQuantity = Int32.Parse(temp[3]);
+                        tempList.Add(pr);
+                        someList.AddRange(tempList);
+
+                        Console.WriteLine("Current inventory");
+                        ListTheProducts(someList);
+                    }
+                    catch
+                    {
+                        Console.WriteLine("It appears you used an unknown command.");
+                    }
+        }
+
         public static void ListTheProducts(List<Product> someList)
         {
             Console.WriteLine("Product\t\t\tPrice\t\tQuantity");

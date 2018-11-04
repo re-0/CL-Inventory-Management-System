@@ -1,8 +1,5 @@
 # Inventory Management System (C#, Command-line based)
 
-# IMPORTANT
-`remove` and `edit` do not work at the moment. Neither do the methods they call. I will fix this ASAP!
-
 ### Intro
 This is a command-line based **inventory management system** that will become part of a Point of Sales (PoS) system.
 
@@ -30,7 +27,9 @@ The program accepts entries in the form of `name, brand, price, quantity`. I dec
 If you want to leave some info out you can write something like this: `Some name, , 10, 1`
 While this would not throw any errors and the product would still be added to the database, I highly recommend using something like `N/A` instead of leaving a blank.
 
-### What happens next?
-Next up, I'll make sure to check whether the most recently added method, `ShowProducts()`, does actually work (coded it real quick before getting some food * *hehe* *), then finish writing methods for updating and deleting records.
+After you added your last item to the inventory (at least one), you will be given the choice of doing any adjustments to the items you added during the current session. You can decide between removing an item, or doing some editing. Both ways use the item's index in the list and assume you start counting at *1*.
 
-I will also start learning GUI development, which means that sooner or later this project will be ported to the .NET Framework.
+When you decide to edit an item, you can use the following commands for further action: `name`, `brand`, `price`, and `quantity`. Data is accepted in the form of `index,change`. When `change` is a string, every whitespace will be kept!
+
+### What happens next?
+Next, I'll create a method for updating an item in the database, or deleting one. 

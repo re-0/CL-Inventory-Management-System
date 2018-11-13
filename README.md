@@ -20,6 +20,8 @@ Next, just create and copy & paste the required source files. Don't forget the .
 `$ dotnet run`
 
 ### Usage
+Right now, at the start of the program, only the command `add` is supported.
+
 The program accepts entries in the form of `name, brand, price, quantity`. I decided to go with a way that resembles *.csv-files*, as this is an easy and efficient way to work with terminal inputs.
 
 **Ex.:** `C# 7.0 in a Nutshell, O'Reilly, 34.23, 1`

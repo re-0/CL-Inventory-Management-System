@@ -194,12 +194,16 @@ namespace NewIn
                 }
                 catch(Exception ex)
                 {
+                    Console.Clear();
                     Console.WriteLine(ex.Message);
                     Console.WriteLine(ex.StackTrace);
                 }
             }else 
                 if ( (prod == null) || (prod.Count == 0 ))
+                {
+                    Console.Clear();
                     Console.WriteLine("No new entries to inventory");
+                }
                 
                 ListTheProducts(ShowProducts());
         } // Add_Inventory

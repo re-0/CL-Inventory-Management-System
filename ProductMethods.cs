@@ -42,10 +42,8 @@ namespace NewIn
 
         public static void checkEditCmd(string someCommand)
         {
-            if(someCommand.ToLower() != "name"
-             && someCommand.ToLower() != "brand" 
-             && someCommand.ToLower() != "price" 
-             && someCommand.ToLower() != "quantity")
+            string[] commands = {"name", "brand", "price", "quantity"};
+            if(!commands.Contains(someCommand.ToLower()))
              {
                             Console.Clear();
                             Console.WriteLine($"<{someCommand}>\nUnknown command. Try again.");

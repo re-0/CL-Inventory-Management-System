@@ -1,0 +1,14 @@
+C:\Users\Regi\Desktop\InventoryMgt\bin\Release\netcoreapp2.1\win10-x64\hostpolicy.dll
+C:\Users\Regi\Desktop\InventoryMgt\bin\Release\netcoreapp2.1\win10-x64\hostfxr.dll
+C:\Users\Regi\Desktop\InventoryMgt\bin\Release\netcoreapp2.1\win10-x64\InventoryMgt.exe
+C:\Users\Regi\Desktop\InventoryMgt\bin\Release\netcoreapp2.1\win10-x64\InventoryMgt.deps.json
+C:\Users\Regi\Desktop\InventoryMgt\bin\Release\netcoreapp2.1\win10-x64\InventoryMgt.runtimeconfig.json
+C:\Users\Regi\Desktop\InventoryMgt\bin\Release\netcoreapp2.1\win10-x64\InventoryMgt.runtimeconfig.dev.json
+C:\Users\Regi\Desktop\InventoryMgt\bin\Release\netcoreapp2.1\win10-x64\InventoryMgt.dll
+C:\Users\Regi\Desktop\InventoryMgt\bin\Release\netcoreapp2.1\win10-x64\InventoryMgt.pdb
+C:\Users\Regi\Desktop\InventoryMgt\obj\Release\netcoreapp2.1\win10-x64\InventoryMgt.csprojAssemblyReference.cache
+C:\Users\Regi\Desktop\InventoryMgt\obj\Release\netcoreapp2.1\win10-x64\InventoryMgt.csproj.CoreCompileInputs.cache
+C:\Users\Regi\Desktop\InventoryMgt\obj\Release\netcoreapp2.1\win10-x64\InventoryMgt.AssemblyInfoInputs.cache
+C:\Users\Regi\Desktop\InventoryMgt\obj\Release\netcoreapp2.1\win10-x64\InventoryMgt.AssemblyInfo.cs
+C:\Users\Regi\Desktop\InventoryMgt\obj\Release\netcoreapp2.1\win10-x64\InventoryMgt.dll
+C:\Users\Regi\Desktop\InventoryMgt\obj\Release\netcoreapp2.1\win10-x64\InventoryMgt.pdb

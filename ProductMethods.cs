@@ -26,11 +26,11 @@ namespace NewIn
 
                         Console.WriteLine("Current inventory");
                         ListTheProducts(someList);
-                    }
-                    catch
-                    {
-                        Console.WriteLine("It appears you used an unknown command.");
-                    }
+            }
+            catch
+            {
+                Console.WriteLine("It appears you used an unknown command.");
+            }
         }
 
         public static void ListTheProducts(List<Product> someList)

@@ -987,11 +987,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "c:\\Users\\Regi\\Desktop\\InventoryMgt\\InventoryMgt.csproj",
+      "projectUniqueName": "C:\\Users\\Regi\\Desktop\\InventoryMgt\\InventoryMgt.csproj",
       "projectName": "InventoryMgt",
-      "projectPath": "c:\\Users\\Regi\\Desktop\\InventoryMgt\\InventoryMgt.csproj",
+      "projectPath": "C:\\Users\\Regi\\Desktop\\InventoryMgt\\InventoryMgt.csproj",
       "packagesPath": "C:\\Users\\Regi\\.nuget\\packages\\",
-      "outputPath": "c:\\Users\\Regi\\Desktop\\InventoryMgt\\obj\\",
+      "outputPath": "C:\\Users\\Regi\\Desktop\\InventoryMgt\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"

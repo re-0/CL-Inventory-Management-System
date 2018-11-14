@@ -14,7 +14,7 @@ namespace NewIn
             string[] firstActionCommands = {"add", "rem", "upd", "exit"};
 
 
-            Console.WriteLine("Welcome!");
+            Console.WriteLine("Welcome!\n\t\tThis project is developed by Reginald Okonkwo, 3rd year Econ student at Uni of Manchester");
 
             
             bool firstBool = false;
@@ -32,6 +32,24 @@ namespace NewIn
                 if(firstAction.ToLower() == "add")
                 {
                     Add_Inventory();
+                    firstBool = true;
+                }
+
+                if(firstAction.ToLower() == "rem")
+                {
+                    Console.WriteLine("Removing inventory will be added soon ...");
+                    firstBool = true;
+                }                
+
+                if(firstAction.ToLower() == "upd")
+                {
+                    Console.WriteLine("Updating inventory will be added soon ...");
+                    firstBool = true;
+                }
+
+                if(firstAction.ToLower() == "exit")
+                {
+                    Console.WriteLine("Exiting the program ...");
                     firstBool = true;
                 }
                 

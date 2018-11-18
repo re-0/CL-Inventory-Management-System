@@ -5,7 +5,7 @@ This is a command-line based **inventory management system** that will become pa
 
 The PoS, too, will be command-line based at first, however, as I progress in my software development journey, I will start building a GUI (probably using WPF).
 
-There are two main reasons as to why I decided to go with SQLite as a database. Firstly, I wanted to use a lightweight database that runs on both my Windows Desktop PC, as well as on my laptop (w/ Linux Mint) without having to do much installation. Secondly, using SQLite allows everyone who tries to run the code to do so without having to download and install unecessary software.
+There are two main reasons as to why I decided to go with SQLite as a database. Firstly, I wanted to use a lightweight database that runs on both my Windows Desktop PC, as well as on my laptop (w/ Linux Mint) without having to do much installation. Secondly, using SQLite allows everyone who tries to run the code to do so without having to download and install unnecessary software.
 
 ### Build project files
 ```

@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.Globalization;
 using Microsoft.Data.Sqlite;
 
-namespace NewIn
+namespace MgtSys
 {
     public static class Methods{
 
@@ -29,15 +29,48 @@ namespace NewIn
             }
             catch
             {
-                Console.WriteLine("It appears you used an unknown command.");
+                Console.WriteLine("It appears you used an unknown input method.");
             }
         }
 
-        public static void ListTheProducts(List<Product> someList)
+        public static void ListTheProducts(List<Product> someList, string someCommand = "")
         {
-            Console.WriteLine("Product\t\t\tPrice\t\tQuantity");
-            foreach(Product obj in someList)
-                Console.WriteLine($"{obj.productName, -18}\t{(char)163}{obj.productPrice, -7}\t{obj.productQuantity}");
+
+            if( (string.IsNullOrEmpty(someCommand)) )
+            {
+                try
+                {
+                    Console.WriteLine("Product\t\t\tPrice\t\tQuantity");
+                    foreach(Product obj in someList)
+                        Console.WriteLine($"{obj.productName, -18}\t{(char)163}{obj.productPrice, -7}\t{obj.productQuantity}");
+                }
+                catch (System.Exception)
+                {
+                    throw;
+                }
+                
+            } // if statement
+
+            if( !(string.IsNullOrEmpty(someCommand)) && someCommand.ToLower() != "sql")
+                Console.WriteLine("Method cannot return data. Unknown command.");
+
+            if(someCommand.ToLower() == "sql"){
+                try
+                {
+                    int i = 1;
+                    Console.WriteLine("Db ID\tProduct\t\t\t\tBrand\t\tPrice\t\tQuantity");
+                    foreach(Product obj in someList)
+                    {
+                        Console.WriteLine($"{obj.Id}.\t{obj.productName, -25}\t{obj.brand, -10}\t{(char)163}{obj.productPrice, -7}\t{obj.productQuantity}");
+                        i++;
+                    }
+                }
+                catch (System.Exception)
+                {
+                    throw;
+                }
+            }
+            
         }
 
         public static void checkEditCmd(string someCommand)
@@ -108,7 +141,6 @@ namespace NewIn
 
                 foreach(var product in someList){
                     using(var cmd = new SqliteCommand(query, con)){
-                        //cmd.Parameters.AddWithValue("@StudentID", student.StudentID);
                         cmd.Parameters.AddWithValue("@Name", product.productName);
                         cmd.Parameters.AddWithValue("@Brand", product.brand);
                         cmd.Parameters.AddWithValue("@Price", product.productPrice);
@@ -127,7 +159,7 @@ namespace NewIn
             {
                 con.Open();
                 
-                string query = "SELECT Name, Brand, Price, Quantity FROM Inventory";
+                string query = "SELECT ID, Name, Brand, Price, Quantity FROM Inventory";
 
                     using(var cmd = new SqliteCommand(query, con))
                     {
@@ -136,6 +168,7 @@ namespace NewIn
                             while(reader.Read())
                             {
                                 var tempProduct = new Product();
+                                tempProduct.Id              = Convert.ToInt32(reader["ID"]);
                                 tempProduct.productName     = Convert.ToString(reader["Name"]);
                                 tempProduct.brand           = Convert.ToString(reader["Brand"]);
                                 tempProduct.productPrice    = Convert.ToDecimal(reader["Price"]);
@@ -148,6 +181,116 @@ namespace NewIn
                 con.Close();
             } // connection
             return tempList.ToList();
+        }
+
+        public static void UpdateProducts(string input)
+        {
+            string name         = string.Empty;
+            string brand        = string.Empty;
+            string price        = string.Empty;
+            string quantity     = string.Empty;
+            string updateQuery  = string.Empty;
+            
+            int? Id = null;
+            string tmpName = string.Empty;
+            string tmpBrand = string.Empty;
+            decimal? tmpPrice = null;
+            int? tmpQuantity = null;
+            
+            string[] temp = input.Split(',');
+        
+        
+            if(temp.ElementAtOrDefault(0) != null)
+                Id = Int32.Parse(temp[0]);
+
+            if(temp.ElementAtOrDefault(1) != null)
+            {
+                tmpName = temp[1];
+                if(!string.IsNullOrWhiteSpace(tmpName))
+                {
+                    name = "Name = @Name";
+                    updateQuery += name;
+                }
+
+            }
+
+            if(temp.ElementAtOrDefault(2) != null)
+            {
+                tmpBrand = temp[2];
+                if(!string.IsNullOrWhiteSpace(tmpBrand))
+                {
+                    brand = "Brand = @Brand";
+                    if(!string.IsNullOrWhiteSpace(updateQuery))
+                        updateQuery += ", "+ brand;
+                    else
+                        updateQuery += brand;
+                }
+            }
+
+            if(temp.ElementAtOrDefault(3) != null)
+            {
+                tmpPrice = Decimal.Parse(temp[3], NumberStyles.Float, CultureInfo.InvariantCulture);
+                if(tmpPrice.HasValue)
+                {
+                    price = "Price = @Price";
+                    if(!string.IsNullOrWhiteSpace(updateQuery))
+                        updateQuery += ", "+ price;
+                    else
+                        updateQuery += price;
+                }
+            }
+
+            if(temp.ElementAtOrDefault(4) != null)
+            {
+                tmpQuantity = Int32.Parse(temp[4]);
+                if(tmpQuantity.HasValue)
+                {
+                    quantity = "Quantity = @Quantity";
+                    if(!string.IsNullOrWhiteSpace(updateQuery))
+                        updateQuery += ", "+ quantity;
+                    else
+                        updateQuery += quantity;
+                }
+            }
+
+            string query = string.Empty;
+
+            if(!string.IsNullOrWhiteSpace(updateQuery))
+            {
+                    try
+                {
+                    using( var con = new SqliteConnection("DataSource = InventoryDB.db"))
+                    {
+                        con.Open();
+
+                        query = "UPDATE Inventory SET " + updateQuery + " WHERE ID = @ID";
+
+                            using(var cmd = new SqliteCommand(query, con)){
+                                if(Id != null && Id.HasValue)
+                                cmd.Parameters.AddWithValue("@ID",        Id);
+                                if(tmpName != null && !string.IsNullOrWhiteSpace(tmpName))
+                                    cmd.Parameters.AddWithValue("@Name", tmpName);
+                                if(tmpBrand != null && !string.IsNullOrWhiteSpace(tmpBrand))
+                                    cmd.Parameters.AddWithValue("@Brand", tmpBrand);
+                                if(tmpPrice != null && tmpPrice.HasValue)
+                                    cmd.Parameters.AddWithValue("@Price", tmpPrice);
+                                if(tmpQuantity != null && tmpQuantity.HasValue)
+                                    cmd.Parameters.AddWithValue("@Quantity", tmpQuantity);
+                                cmd.ExecuteNonQuery();
+                            } // using cmd
+                        
+                        con.Close();
+                    }
+                    Console.WriteLine("Update successful!");
+                }
+                catch (System.Exception e)
+                {
+                    Console.WriteLine($"Update failed!\n\n\n{query}\n\n{e}");
+                    // \n\n{query} ... Include this to check UPDATE query in case of error!
+                }
+            } // IF
+            else
+                Console.WriteLine("Warning! Empty UPDATE arguments! If you do not want to commit any updates press [n] next...");
         }
 
         public static void AddedInventoryValue(List<Product> someList)

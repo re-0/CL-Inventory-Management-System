@@ -3,11 +3,11 @@ using System.Linq;
 using System.Collections.Generic;
 using System.Globalization;
 using Microsoft.Data.Sqlite;
-using static NewIn.Methods;
+using static MgtSys.Methods;
 
-namespace NewIn
+namespace MgtSys
 {
-    public static class LargeVoidMethods
+    public static class TheAddFunction
     {
         public static void Add_Inventory()
         {
@@ -205,7 +205,7 @@ namespace NewIn
                     Console.WriteLine("No new entries to inventory");
                 }
                 
-                ListTheProducts(ShowProducts());
+                ListTheProducts(ShowProducts(), "SQL");
         } // Add_Inventory
     }
 }

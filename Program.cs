@@ -3,9 +3,10 @@ using System.Linq;
 using System.Collections.Generic;
 using System.Globalization;
 using Microsoft.Data.Sqlite;
-using static NewIn.LargeVoidMethods;
+using static MgtSys.TheAddFunction;
+using static MgtSys.TheUpdateFunction;
 
-namespace NewIn
+namespace MgtSys
 {
     class Program
     {
@@ -43,7 +44,7 @@ namespace NewIn
 
                 if(firstAction.ToLower() == "upd")
                 {
-                    Console.WriteLine("Updating inventory will be added soon ...");
+                    Update_Inventory();
                     firstBool = true;
                 }
 

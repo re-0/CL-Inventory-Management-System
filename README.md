@@ -20,9 +20,11 @@ Next, just create and copy & paste the required source files. Don't forget the .
 `$ dotnet run`
 
 ### Usage
-*Right now, at the start of the program, only the command `add` is supported.*
+There are currently two actions supporte-> Add new inventory: `add`; Update inventory in database: `upd`.
 
-The program accepts entries in the form of `name, brand, price, quantity`. I decided to go with a way that resembles *.csv-files*, as this is an easy and efficient way to work with terminal inputs.
+If you want to add new inventory, the program accepts entries in the form of `name, brand, price, quantity`. I decided to go with a way that resembles *.csv-files*, as this is an easy and efficient way to work with terminal inputs.
+
+If you want to update inventory in the database, entries will be accepted in the form of `Db ID, Name, Brand, Price, Quantity`. When writing the method I understood that there are times where you only need to update the name or price, thus, simply leave things that do not need an update blank. E.g., `10,,,10.5`. Note that you can drop the `,` after the last update you intend to do.
 
 **Ex.:** `C# 7.0 in a Nutshell, O'Reilly, 34.23, 1`
 
@@ -34,4 +36,4 @@ After you added your last item to the inventory (at least one), you will be give
 When you decide to edit an item, you can use the following commands for further action: `name`, `brand`, `price`, and `quantity`. Data is accepted in the form of `index,change`. When `change` is a string, every whitespace will be kept!
 
 ### What happens next?
-Next, I'll create a method for updating an item in the database, or deleting one. 
+Next, I'll create a method for deleting items in the database. As soon as this is done, I start working on the Checkout System.

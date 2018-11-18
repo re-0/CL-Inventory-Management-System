@@ -33,7 +33,7 @@ After you added your last item to the inventory (at least one), you will be give
 
 When you decide to edit an item, you can use the following commands for further action: `name`, `brand`, `price`, and `quantity`. Data is accepted in the form of `index,change`. When `change` is a string, every whitespace will be kept!
 
-If you want to update inventory in the database, entries will be accepted in the form of `Db ID, Name, Brand, Price, Quantity`. When writing the method I understood that there are times where you only need to update the name or price, thus, simply leave things that do not need an update blank. E.g., `10,,,10.5`. Note that you can drop the `,` after the last update you intend to do.
+If you want to update inventory in the database, entries will be accepted in the form of `Db ID, Name, Brand, Price, Quantity`. When writing the method I understood that there are times where you only need to update the name or price, etc., thus, simply leave things that do not need an update blank. E.g., `10,,,10.5`. Note that you can drop the `,` after the last update you intend to do.
 
 ### What happens next?
 Next, I'll create a method for deleting items in the database. As soon as this is done, I start working on the Checkout System.

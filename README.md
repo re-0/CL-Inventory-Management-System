@@ -20,7 +20,11 @@ Next, just create and copy & paste the required source files. Don't forget the .
 `$ dotnet run`
 
 ### Usage
-There are currently two actions supported -> Add new inventory: `add`; Update inventory in database: `upd`.
+When first starting the program, you can choose between the following actions:
+* Add new inventory: `add`
+* Update inventory in database: `upd`
+* Remove inventory from database: `rem`
+* Exit the program: `exit`
 
 If you want to add new inventory, the program accepts entries in the form of `name, brand, price, quantity`. I decided to go with a way that resembles *.csv-files*, as this is an easy and efficient way to work with terminal inputs.
 

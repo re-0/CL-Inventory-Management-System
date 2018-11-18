@@ -5,6 +5,7 @@ using System.Globalization;
 using Microsoft.Data.Sqlite;
 using static MgtSys.TheAddFunction;
 using static MgtSys.TheUpdateFunction;
+using static MgtSys.TheRemoveFromDBFunction;
 
 namespace MgtSys
 {
@@ -44,7 +45,7 @@ namespace MgtSys
 
                 if(firstAction.ToLower() == "rem")
                 {
-                    Console.WriteLine("Removing inventory will be added soon ...");
+                    Remove_Inventory();
                     firstBool = true;
                 }                
 

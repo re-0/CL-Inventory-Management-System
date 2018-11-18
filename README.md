@@ -39,5 +39,9 @@ When you decide to edit an item, you can use the following commands for further 
 
 If you want to update inventory in the database, entries will be accepted in the form of `Db ID, Name, Brand, Price, Quantity`. When writing the method I understood that there are times where you only need to update the name or price, etc., thus, simply leave things that do not need an update blank. E.g., `10,,,10.5`. Note that you can drop the `,` after the last update you intend to do.
 
+When removing an item, the console accepts two modes: **"CSV"** and **"Newline"**.
+CSV simply means that you enter the ID of each inventory item you wish to delete, e.g., `10, 15, 13, 2, 20, 23`.
+Newline means that you enter the ID of a single item and press the RETURN key, and continue to do so for every other item you want to get rid of. Once you're done, type a non-integer character, e.g., a single `,`, `a`, etc.
+
 ### What happens next?
 Next, I'll create a method for deleting items in the database. As soon as this is done, I start working on the Checkout System.

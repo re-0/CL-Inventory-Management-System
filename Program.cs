@@ -36,17 +36,17 @@ namespace MgtSys
                     firstBool = true;
                 }
 
-                if(firstAction.ToLower() == "rem")
-                {
-                    Console.WriteLine("Removing inventory will be added soon ...");
-                    firstBool = true;
-                }                
-
                 if(firstAction.ToLower() == "upd")
                 {
                     Update_Inventory();
                     firstBool = true;
                 }
+
+                if(firstAction.ToLower() == "rem")
+                {
+                    Console.WriteLine("Removing inventory will be added soon ...");
+                    firstBool = true;
+                }                
 
                 if(firstAction.ToLower() == "exit")
                 {
